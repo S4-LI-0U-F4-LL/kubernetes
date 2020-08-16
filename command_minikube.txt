@@ -1,0 +1,37 @@
+### Start kubernetes with CRI-O
+
+$ minikube start container-runtime-crio
+
+###Kubernetes dashboard
+
+$ minikube dashboard
+
+### kubernetes CLI
+## kubernetes configuration
+
+### kubernetes API via proxy
+## start server proxy
+
+$kubectl proxy
+
+### APIs - without 'kubectl proxy'
+## Get token
+
+# call via a nother terminal
+$ curl http://localhost:8001/
+
+$TOKEN=$(kubectl describe secret -n kube-system $(kubectl get secrets -n kube-system | grep default | cut -f1 -d ' ') | grep -E '^token' | cut -f2 -d':' | tr -d '\t' | tr -d " ")
+
+## Get the API server endpoint
+$ APISERVER=$(kubectl config view | grep https | cut -f 2- -d ":" | tr -d " ")
+
+## Access the API server using the curl command
+
+$ curl $APISERVER --header "Authorization: Bearer $TOKEN" --insecure
+
+
+$ kubectl config view
+
+## cluster information
+
+$ kuectl cluseter-info   
