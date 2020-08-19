@@ -1,0 +1,28 @@
+### Create a deployment
+
+$ kubectl create deployment <AppName> --image= < image-version>
+
+### Get deployment 
+$ kubectl get deploy,rs,po -l app= <AppName>
+
+### scale application 
+
+kubectl scale deploy < AppName > --replicas= < NbrReplicas >
+
+### Describe the deployment
+
+$ kubectl describre deploy < AppName >
+
+
+### see rollout history of the deployment
+
+$ kubectl rollout history deploy <AppName> --revison= <NbrOfRevision>
+
+### perform a rolling update
+
+$ kubectl set image deployment <AppName>  <imgName> = <VersionImgName>
+
+### roll back to a previous revision
+
+$ kubectl rollout undo deployment <AppName> --to-revision= <NbrOfRevision>
+
