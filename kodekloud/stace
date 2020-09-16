@@ -1,0 +1,3 @@
+### explain  attribute for an object
+
+$ kubectl explain < objet name > | grep <attribut> -A5

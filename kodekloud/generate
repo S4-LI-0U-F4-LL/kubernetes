@@ -1,0 +1,4 @@
+ 
+### Generate certificat sigin request
+
+$ openssl req -nem -key < name> -out <name file>

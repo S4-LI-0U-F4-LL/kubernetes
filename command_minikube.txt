@@ -34,4 +34,8 @@ $ kubectl config view
 
 ## cluster information
 
-$ kuectl cluseter-info   
+$ kuectl cluseter-info  
+
+
+### create a new pod with generated yaml file
+$ kubectl run  <PodName> --image= <ImageName> --dry-run=client -o yaml > filenmane.ymal 

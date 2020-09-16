@@ -1,0 +1,2 @@
+
+watch "< commande > "  => #  command to for command to astart 
