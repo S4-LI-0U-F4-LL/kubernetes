@@ -1,0 +1,25 @@
+### crate a new namespace network
+
+$ ip netns add < namespace name >
+
+### execute network command with a given namespace
+
+$ ip netns exec < namespace name> < network command >
+$ ip -n <namespace> < command> 
+### eg:sudo ip netns exec saliou ip link 
+
+### Attach two namespace 
+$ ip link add veth-<ns-1> type veth peer name veth-<ns-2>
+$ ip link set veth-<ns-1> netns <ns-1>
+$ip  link set veth-< ns-2> netns <ns-2>
+
+## eg:
+$ ip link add veth-saliou type veth peer name veth-booms 
+$ ip link set veth-saliou netns saliou
+$ip  link set veth-booms netns booms
+
+### assign address with namespace
+$ ip -n < name space > addr <IP address> dev veth-<namespace>
+
+### bring up the interface 
+$

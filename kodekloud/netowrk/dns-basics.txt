@@ -1,0 +1,9 @@
+### map ip address  white a in /etc/hosts
+
+echo 192.168.1.11  db >> /etc/hosts
+
+### point host to a dns server DNS serveur 
+
+echo ' <nameserver>  <Ip DNS>  /etc/resolv.conf
+
+
