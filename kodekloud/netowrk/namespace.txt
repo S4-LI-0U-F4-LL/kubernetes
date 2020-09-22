@@ -22,4 +22,9 @@ $ip  link set veth-booms netns booms
 $ ip -n < name space > addr <IP address> dev veth-<namespace>
 
 ### bring up the interface 
-$
+$ ip -n <namespace> link set veth-<namespace> up
+
+### delete link between 2 namespace
+$ ip -n <namespace> link del  veth-<namespace>
+
+
